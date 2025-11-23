@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+
+<header class="site-header">
+    <div id="site-header"></div>
+</header>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Junction 2024 | Anssi Lampinen</title>
+
+  <!-- Key line: everything below resolves relative to the site root one level up -->
+  <base href="../">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+
+
+
+
+<body data-page="work">
+
+  <!-- Main content -->
+  <div class="wrapper">
+    <main>
+      <section>
+        <h1>Junction Main Event 2025, Bank of Finland challenge + SaS tech challenge</h1>
+        <p>
+            In this project we were provided 50 gb of textual data, containing legistlations from EU and Finnish laws, conserning financial sector. The challenge was to create a tool to sort through the data
+            to find contradictions and overlaps in legistlations, and to specifically do so conserning specific risks that affect loan providers. We used multiple text processing methods on SaS Viya platform, combined with 
+            methods such as word frequency matching and contextual embeddings in python to find potential pairs of legistlations which might overlap or contradict. Once we had narrowed the potential pairs down as much as possible, 
+            we used an LLM model to compare the pairs and flag the ones with high likelihood of contradiction or overlap. We were only able to demosntrate our solution on a small subnset of the data, since we were running 
+            the LLM model on a laptop, so we were only able to run the comparisons in the order of magnitude of tens per minute.
+            <br><br>
+            To be completely honest, I was super hesitant about us picking this challenge, going through gigabytes of textual data in a span of one weekend just didn’t sound like a great time, but the others insisted, 
+            so off we went. Regardless of my doubts, we were able to return a suprisingly competent solution, which with proper polishing and sufficient funding for the computing power required could have actually
+            been used for the task.
+        </p>
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Learned about tools on SaS Viya platform</li>
+          <li>Learned about different ways of processing textual data</li>
+          <li>Trust your teammates when they say something is possible :)</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+<footer>
+    <div id="site-footer"></div>
+</footer>
+
+</html>

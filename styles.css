@@ -34,18 +34,18 @@ body {
   background: #111;
 }
 
-.nav {
+/* .nav {
   display: flex;
   gap: 1rem;
   justify-content: center;   /* Center nav links */
-}
+/* } */
 
 .nav a {
   text-decoration: none;
   padding: .4rem .7rem;
   border-radius: .5rem;
   color: #e0e0e0;
-}
+} */
 
 .nav a:hover {
   background: #333;
@@ -143,4 +143,22 @@ footer {
 /* Responsive tweak: shrink date column on small screens */
 @media (max-width: 600px) {
   .work-date { width: 150px; font-size: .95rem; }
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+a:hover,
+a:focus {
+  color: #7d7d7d;
+}
+
+a:active {
+  color: #7d7d7d;
 }

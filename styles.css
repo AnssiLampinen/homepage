@@ -131,13 +131,7 @@ footer {
 
 .work-title a:hover,
 .work-title a:focus-visible {
-  background: #2a2a2a;
-  outline: none;
-}
-
-/* Optional: subtle row hover */
-.work-table tr:hover td {
-  background: #1f1f1f;
+  color: #7d7d7d;
 }
 
 /* Responsive tweak: shrink date column on small screens */
@@ -149,8 +143,6 @@ footer {
 
 a {
   color: #e0e0e0;
-  text-decoration: none;
-  font-weight: 500;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 

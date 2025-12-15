@@ -143,6 +143,7 @@ footer {
 
 a {
   color: #e0e0e0;
+  text-decoration: none;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 

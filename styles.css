@@ -129,12 +129,18 @@ footer {
   vertical-align: top;
 }
 
-/* Dates column */
+/* Mobile first (phones) */
 .work-date {
-  width: 220px;               /* fixed column; adjust as you like */
-  color: #99a2b2;             /* different color than titles */
-  white-space: nowrap;        /* keep dates on one line */
-  font-variant-numeric: tabular-nums; /* aligns digits neatly */
+  width: 90px;                /* compact but readable */
+  color: #99a2b2;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Laptop / desktop */
+@media (min-width: 768px) {
+  .work-date {
+    width: 220px;
+  }
 }
 
 /* Titles column */

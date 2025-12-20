@@ -89,13 +89,31 @@ footer {
   background: #222;
 }
 
-/* Wrapper */
+/* Mobile first (phones, small tablets) */
 .wrapper {
-  padding-left: 3rem;   /* ← Change this distance as you like (50px, 80px, etc.) */
-  padding-right: 3rem;
-  text-align: left;     /* Ensures text stays left-aligned */
-  max-width: 50%;     /* Optional: keeps content from stretching too wide */
-  margin: 0 auto;       /* Centers wrapper on the page */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: left;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Laptop / desktop (≈ 768px – 1919px) */
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 70%;
+  }
+}
+
+/* 4K / UHD monitors (≥ 1920px) */
+@media (min-width: 1920px) {
+  .wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 50%;
+  }
 }
 
 /* Table layout */

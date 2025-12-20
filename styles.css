@@ -94,7 +94,7 @@ footer {
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: left;
-  max-width: 90%;
+  max-width: 85%;
   margin: 0 auto;
 }
 
@@ -158,9 +158,6 @@ footer {
 }
 
 /* Responsive tweak: shrink date column on small screens */
-@media (max-width: 600px) {
-  .work-date { width: 150px; font-size: .95rem; }
-}
 
 /* ---------- Links ---------- */
 

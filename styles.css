@@ -47,14 +47,6 @@ body {
   color: #e0e0e0;
 } */
 
-.nav a:hover {
-  background: #333;
-}
-
-.nav a.active {
-  background: #333;
-}
-
 /* Main content area */
 .container {
   max-width: 800px;
@@ -62,6 +54,22 @@ body {
   padding: 0 1rem;
   padding-left: 20rem;
   padding-right: 20rem;
+}
+
+/* Sticky header and footer */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  z-index: 100;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #333;
 }
 
 /* Cards on Projects page */
@@ -79,15 +87,6 @@ body {
   border-radius: .75rem;
   padding: 1rem;
   background: #222;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  color: #666;
 }
 
 /* Wrapper */

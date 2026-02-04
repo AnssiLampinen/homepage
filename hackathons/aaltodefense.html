@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+
+<header class="site-header">
+    <div id="site-header"></div>
+</header>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aalto Defense Hackathon | Anssi Lampinen</title>
+
+  <!-- Key line: everything below resolves relative to the site root one level up -->
+  <base href="../">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+
+
+
+
+<body data-page="work">
+
+  <!-- Main content -->
+  <div class="wrapper">
+    <main>
+      <section>
+        <h1>Aalto Defense Hackathon</h1>
+        <p>
+            Created a working prototyper for a low cost passive survaillance system to detect and react to enemy movements. The consists
+            of a grid of edge sensors placed along tree lines and fields. These edge sensors consist of a camera sensor,
+            a low power computing unit such as a ESP32, battery and a radion transmission unit. When the sensor detects movement in the frame,
+            it segemnts out the part where something moved and sends it through the mesh network to a main node located further away from the
+            frontline. This main node has more computing power, and it will run the image through a computer vision algorith to detect what's in
+            the image. If there is for example a soldier in that image, it will store that information, and eutomatically generate a report 
+            about it based on a pre-defined structure.
+        </p>
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li></li>
+        </ul>
+        <h2>Technologies used</h2>
+        <p>
+          Python, Computer Vision, Embedded systems, RAG
+      </section>
+      <p class="links">
+          <a href="https://github.com/daansku/defense-hack-25" target="_blank">↗ Project repository</a><br>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+<footer>
+    <div id="site-footer"></div>
+</footer>
+
+</html>

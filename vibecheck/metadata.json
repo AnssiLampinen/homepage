@@ -1,7 +1,0 @@
-{
-  "name": "VibeCheck",
-  "description": "Scan a room, share your music, and discover the room's collective vibe using AI.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}

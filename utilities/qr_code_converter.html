@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<header class="site-header">
+  <div id="site-header"></div>
+</header>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Code Converter | Anssi Lampinen</title>
+  <base href="../">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="utilities-qr">
+  <div class="wrapper">
+    <main>
+      <section>
+        <h1>QR Code Converter</h1>
+
+        <div class="qr-layout">
+          <div>
+            <div class="qr-field">
+              <label for="qr-input">Text or URL</label>
+              <textarea id="qr-input" placeholder="Paste text here"></textarea>
+            </div>
+
+            <div class="qr-field">
+              <label for="qr-size">Size</label>
+              <input id="qr-size" type="range" min="160" max="480" step="16" value="256" />
+            </div>
+
+            <div class="qr-row">
+              <div class="qr-field qr-swatch">
+                <label for="qr-dark">Dark</label>
+                <input id="qr-dark" type="color" value="#111111" />
+              </div>
+
+              <div class="qr-field qr-swatch">
+                <label for="qr-light">Light</label>
+                <input id="qr-light" type="color" value="#ffffff" />
+              </div>
+            </div>
+
+            <div class="qr-actions">
+              <button type="button" data-qr-action="render">Generate</button>
+              <button type="button" data-qr-action="download">Download PNG</button>
+              <button type="button" data-qr-action="copy">Copy image</button>
+            </div>
+          </div>
+
+          <div class="qr-output">
+            <canvas width="256" height="256" aria-label="Generated QR code" data-qr-canvas></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div id="site-footer"></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="utilities/vendor/qrcode.bundle.js" defer></script>
+  <script src="utilities/qr_code_converter.js" defer></script>
+</body>
+
+</html>

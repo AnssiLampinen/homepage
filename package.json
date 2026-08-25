@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.1"
+  }
+}

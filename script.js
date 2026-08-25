@@ -1,5 +1,8 @@
 // Load shared header
-fetch('header.html')
+const currentPage = document.body.dataset.page || '';
+const headerPath = currentPage.startsWith('utilities') ? 'utilities/header.html' : 'header.html';
+
+fetch(headerPath)
   .then(res => res.text())
   .then(data => {
     document.getElementById('site-header').innerHTML = data;

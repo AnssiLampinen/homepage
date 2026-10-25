@@ -183,6 +183,20 @@ function occurrences(ev, from, to, skip = new Set()) {
   return out;
 }
 
+// All occurrences in a feed between two dates, leaving out moved or
+// cancelled dates of repeating events
+function expandFeed(text, from, to) {
+  const parsed = splitCalendar(text).events.map(parseEvent).filter(Boolean);
+  const skipByUid = new Map();
+  for (const ev of parsed) {
+    const dates = ev.recurrenceId ? [ev.recurrenceId] : ev.rrule ? ev.exdates : [];
+    if (!dates.length) continue;
+    if (!skipByUid.has(ev.uid)) skipByUid.set(ev.uid, new Set());
+    dates.forEach(d => skipByUid.get(ev.uid).add(d));
+  }
+  return parsed.flatMap(ev => occurrences(ev, from, to, ev.rrule ? skipByUid.get(ev.uid) : undefined));
+}
+
 async function fetchFeed() {
   const url = process.env.UNI_ICS_URL;
   if (!url) throw new Error('UNI_ICS_URL is not set');
@@ -192,5 +206,5 @@ async function fetchFeed() {
 }
 
 module.exports = {
-  splitCalendar, joinCalendar, parseEvent, occurrences, addDays, fetchFeed,
+  splitCalendar, joinCalendar, parseEvent, occurrences, expandFeed, addDays, fetchFeed,
 };

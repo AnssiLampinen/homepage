@@ -1,5 +1,5 @@
 // Dashboard data: the feed's events for one week, with their on/off state
-const { splitCalendar, parseEvent, occurrences, addDays, fetchFeed } = require('./_lib/ics');
+const { expandFeed, addDays, fetchFeed } = require('./_lib/ics');
 const { getDisabled } = require('./_lib/store');
 const { isAdmin } = require('./_lib/auth');
 
@@ -16,17 +16,7 @@ module.exports = async (req, res) => {
   const to = addDays(from, 6);
   try {
     const [text, disabled] = await Promise.all([fetchFeed(), getDisabled()]);
-    const parsed = splitCalendar(text).events.map(parseEvent).filter(Boolean);
-    // Dates of a repeating event that were moved (shown separately) or cancelled
-    const skipByUid = new Map();
-    for (const ev of parsed) {
-      const dates = ev.recurrenceId ? [ev.recurrenceId] : ev.rrule ? ev.exdates : [];
-      if (!dates.length) continue;
-      if (!skipByUid.has(ev.uid)) skipByUid.set(ev.uid, new Set());
-      dates.forEach(d => skipByUid.get(ev.uid).add(d));
-    }
-    const events = parsed
-      .flatMap(ev => occurrences(ev, from, to, ev.rrule ? skipByUid.get(ev.uid) : undefined))
+    const events = expandFeed(text, from, to)
       .map(occ => ({ ...occ, off: disabled.has(occ.key) }));
     res.setHeader('Cache-Control', 'no-store');
     res.status(200).json({ from, to, events });

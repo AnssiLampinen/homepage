@@ -289,19 +289,6 @@ a:active {
   margin: 0;
 }
 
-/* Booking page */
-.booking-embed iframe {
-  width: 100%;
-  height: 700px;
-  border: 1px solid #333;
-  border-radius: .5rem;
-  background: #fff;
-}
-
-.booking-status {
-  color: #99a2b2;
-}
-
 /* University calendar dashboard */
 .cal-login[hidden] {
   display: none;
@@ -426,4 +413,74 @@ a:active {
 .cal-event-time {
   font-variant-numeric: tabular-nums;
   opacity: .8;
+}
+
+/* Booking page */
+.cal-free {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: .15rem .3rem;
+  border: 1px solid #3c6e4f;
+  border-radius: .35rem;
+  background: #1e3a2a;
+  color: #b9d8c4;
+  font: inherit;
+  font-size: .75rem;
+  text-align: left;
+  vertical-align: top;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.cal-free:hover {
+  border-color: #e0e0e0;
+}
+
+.cal-chosen {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  box-sizing: border-box;
+  padding: .15rem .3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: .35rem;
+  background: #2f4a72;
+  color: #e0e0e0;
+  font-size: .75rem;
+  pointer-events: none;
+}
+
+.booking-form {
+  margin-top: 1.5rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .5rem .75rem;
+  border: 1px solid #333;
+  border-radius: .5rem;
+  background: #111;
+  color: #e0e0e0;
+  font: inherit;
+}
+
+.booking-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.booking-form button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+.booking-trap {
+  position: absolute;
+  left: -10000px;
 }

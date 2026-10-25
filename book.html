@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<header class="site-header">
+    <div id="site-header"></div>
+</header>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book a time | Anssi Lampinen</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="book">
+
+
+<div class="wrapper">
+    <main>
+        <section>
+            <h1>Book a time</h1>
+            <p>Pick a free slot below and it goes straight into my calendar.</p>
+
+            <!-- Paste the Google Calendar appointment schedule booking page link here -->
+            <div id="booking" class="booking-embed"
+                 data-schedule-url="">
+                <p class="booking-status">Booking isn't open yet. Check back soon.</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div id="site-footer"></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Embed the Google Calendar appointment schedule once a link is set
+const booking = document.getElementById('booking');
+const scheduleUrl = booking.dataset.scheduleUrl.trim();
+if (scheduleUrl) {
+  const iframe = document.createElement('iframe');
+  iframe.src = scheduleUrl + (scheduleUrl.includes('?') ? '&' : '?') + 'gv=true';
+  iframe.title = 'Book a time with Anssi';
+  iframe.loading = 'lazy';
+  booking.replaceChildren(iframe);
+}
+</script>
+</body>
+</html>

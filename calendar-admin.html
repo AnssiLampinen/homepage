@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<header class="site-header">
+    <div id="site-header"></div>
+</header>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Calendar | Anssi Lampinen</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="calendar-admin">
+
+
+<div class="wrapper">
+    <main>
+        <section>
+            <h1>University calendar</h1>
+
+            <form id="login" class="cal-login" hidden>
+                <label for="password">Password</label>
+                <input id="password" type="password" autocomplete="current-password" required />
+                <button type="submit">Log in</button>
+            </form>
+
+            <div id="dashboard" hidden>
+                <p class="cal-help">Click an event to toggle its weekly series. Dimmed events are left out of the filtered feed and don't block booking slots.</p>
+                <div class="cal-toolbar">
+                    <button type="button" id="prev">‹ Previous</button>
+                    <button type="button" id="today">This week</button>
+                    <button type="button" id="next">Next ›</button>
+                    <span id="range" class="cal-range"></span>
+                    <button type="button" id="logout" class="cal-logout">Log out</button>
+                </div>
+                <div id="week" class="cal-week"></div>
+            </div>
+
+            <p id="status" class="cal-status"></p>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div id="site-footer"></div>
+</footer>
+
+<script src="script.js"></script>
+<script src="calendar-admin.js"></script>
+</body>
+</html>

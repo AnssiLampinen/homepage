@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<header class="site-header">
+    <div id="site-header"></div>
+</header>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book a time | Anssi Lampinen</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="book">
+
+
+<div class="wrapper">
+    <main>
+        <section>
+            <h1>Book a time</h1>
+            <p>Highlighted times are free. Click one, adjust the start and end, and the meeting goes straight into my calendar. Times are in Finnish time (Europe/Helsinki).</p>
+
+            <div class="cal-toolbar">
+                <button type="button" id="prev">‹ Previous</button>
+                <button type="button" id="today">This week</button>
+                <button type="button" id="next">Next ›</button>
+                <span id="range" class="cal-range"></span>
+            </div>
+            <div id="week" class="cal-week"></div>
+            <p id="status" class="cal-status"></p>
+
+            <form id="booking-form" class="booking-form" hidden>
+                <h2 id="booking-title">Your meeting</h2>
+                <div class="qr-row">
+                    <div class="qr-field">
+                        <label for="start">Start</label>
+                        <select id="start" required></select>
+                    </div>
+                    <div class="qr-field">
+                        <label for="end">End</label>
+                        <select id="end" required></select>
+                    </div>
+                </div>
+                <div class="qr-field">
+                    <label for="name">Name</label>
+                    <input id="name" autocomplete="name" maxlength="100" required />
+                </div>
+                <div class="qr-field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" autocomplete="email" maxlength="200" required />
+                </div>
+                <div class="qr-field">
+                    <label for="message">What would you like to talk about? (optional)</label>
+                    <textarea id="message" maxlength="2000"></textarea>
+                </div>
+                <div class="booking-trap" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input id="website" tabindex="-1" autocomplete="off" />
+                </div>
+                <div class="qr-actions">
+                    <button type="submit">Book</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div id="site-footer"></div>
+</footer>
+
+<script src="script.js"></script>
+<script src="book.js"></script>
+</body>
+</html>
